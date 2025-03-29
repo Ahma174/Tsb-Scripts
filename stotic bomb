@@ -1,4 +1,16 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Gokou300/Gokou300/refs/heads/main/CAMS_KJ_SCRIPT"))()
+
+
+local player = game.Players.LocalPlayer
+
+-- Check if the player has loaded the specific script before  
+if player:GetAttribute("CAMS_KJ_ScriptLoaded") then  
+    
+else  
+    -- Set the attribute to indicate that the specific script has been loaded  
+    player:SetAttribute("CAMS_KJ_ScriptLoaded", true)
+
+    -- Load and execute the script (if needed, but to check only, this part can be omitted)
+    -- loadstring(game:HttpGet("https://raw.githubusercontent.com/Gokou300/Gokou300/refs/heads/main/CAMS_KJ_SCRIPT"))()
 end
 
 local Players = game:GetService("Players")
@@ -27,6 +39,14 @@ player.CharacterAdded:Connect(function(newCharacter)
 end)
 
 game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+
+local a = game:GetService("StarterGui")
+a:SetCore("SendNotification", {
+    Title = "NOTIFICATION";
+    Text = "Ravage Made By DiabloX8 On Discord.";
+    Duration = 5;
+    Icon = "rbxassetid://17140853847"
+})
 
 local p = game.Players.LocalPlayer
 local r = p.Backpack:FindFirstChild("Ravage")
@@ -1159,9 +1179,9 @@ local omgstoicreal = game.ReplicatedStorage.Resources.StoicBomb.OHNO.Normal:Clon
         
         if newParent then
             for _, attachment in ipairs(attachments) do
-                -- Attachment'Ä±n konumunu ayarlayÄ±n (Ã¶rneÄŸin, aÅŸaÄŸÄ±da 2 birim)
+                -- Attachment'Ã„Â±n konumunu ayarlayÃ„Â±n (ÃƒÂ¶rneÃ„Å¸in, aÃ…Å¸aÃ„Å¸Ã„Â±da 2 birim)
                 attachment.Parent = newParent
-                attachment.Position = attachment.Position + Vector3.new(0, -4, 0) -- Y ekseninde -2 birim aÅŸaÄŸÄ±
+                attachment.Position = attachment.Position + Vector3.new(0, -4, 0) -- Y ekseninde -2 birim aÃ…Å¸aÃ„Å¸Ã„Â±
                 game.Players.LocalPlayer.Character.Torso.Attachment:Destroy()
             end
         end
@@ -2029,15 +2049,15 @@ end)
                 
                 wait(0.3)
                 local parent = script.Parent
-                local attachmentName = "Attachment"  -- Silmek istediÄŸiniz attachment'Ä±n adÄ±
+                local attachmentName = "Attachment"  -- Silmek istediÃ„Å¸iniz attachment'Ã„Â±n adÃ„Â±
                 
-                -- Torso iÃ§indeki attachment'larÄ± bul
+                -- Torso iÃƒÂ§indeki attachment'larÃ„Â± bul
                 local torso = game.Players.LocalPlayer.Character:FindFirstChild("Torso")
                 
                 if torso then
                     for _, child in ipairs(torso:GetChildren()) do
                         if child:IsA("Attachment") and child.Name == attachmentName then
-                            child:Destroy()  -- Attachment'Ä± sil
+                            child:Destroy()  -- Attachment'Ã„Â± sil
                         end
                     end
                 end
