@@ -1,0 +1,602 @@
+local p = game.Players.LocalPlayer
+local Humanoid = p.Character:WaitForChild("Humanoid")
+
+local AnimAnim = Instance.new("Animation")
+AnimAnim.AnimationId = "rbxassetid://16945573694"
+local Anim = Humanoid:LoadAnimation(AnimAnim)
+AnimAnim.AnimationId = "rbxassetid://0"
+Anim:Play()
+
+local soundeffect = Instance.new("Sound")
+soundeffect.SoundId = "rbxassetid://16945495411"
+soundeffect.Parent = game.Players.LocalPlayer.Character.Torso
+soundeffect:Play()
+soundeffect.Volume = 1
+
+wait(0.5)
+
+local soundId = "rbxassetid://16945517708"
+local sound = Instance.new("Sound")
+sound.SoundId = soundId
+sound.Parent = game.Workspace
+sound:Play()
+sound.Volume = 2
+
+wait(0.125)
+
+local soundId = "rbxassetid://16945691441"
+local sound = Instance.new("Sound")
+sound.SoundId = soundId
+sound.Parent = game.Workspace
+sound:Play()
+sound.Volume = 4
+
+local soundId = "rbxassetid://16945593216"
+local sound = Instance.new("Sound")
+sound.SoundId = soundId
+sound.Parent = game.Workspace
+sound:Play()
+sound.Volume = 4
+
+task.spawn(function()
+     
+local R = game:GetService("RunService")
+local P = game.Players.LocalPlayer
+local C = workspace.CurrentCamera
+
+local M = 1
+local D = 0.3
+local RD = 0.3
+
+local OC = C.CFrame
+
+local function s(d, m, rd)
+    local st = tick()
+    local c
+
+    c = R.RenderStepped:Connect(function()
+        local e = tick() - st
+        if e < d then
+            local sx = math.random(-m, m)
+            local sy = math.random(-m, m)
+            C.CFrame = C.CFrame * CFrame.Angles(math.rad(sx), math.rad(sy), 0)
+        else
+            c:Disconnect()
+            wait(rd)
+        end
+    end)
+end
+
+s(D, M, RD)
+
+    end)
+
+
+AnimAnim = Instance.new("Animation")
+AnimAnim.AnimationId = "rbxassetid://16945550029"
+Anim = Humanoid:LoadAnimation(AnimAnim)
+AnimAnim.AnimationId = "rbxassetid://0"
+Anim:Play()
+
+    local V_720 = V_415:FindFirstChildOfClass("Humanoid")
+    if V_720 then
+        local V_819 = Instance.new("Animation")
+        V_819.AnimationId = "rbxassetid://16945557433"
+        local V_920 = V_720:LoadAnimation(V_819)
+        V_920:Play()
+    end
+end
+
+V_101()
+
+local ws = game:GetService("Workspace")
+
+local function dpm()
+    local parts = {"FinalImpact", "slam", "hold", "FinalImpactHUGEignore"}
+    for _, n in pairs(parts) do
+        local p = ws:FindFirstChild(n)
+        if p then
+            p:Destroy()
+        end
+    end
+end
+
+local function main()
+    local m = ws:FindFirstChild("Weakest Dummy")
+    if m and m:IsA("Model") then
+        m:Destroy()
+    end
+    dpm()
+end
+
+wait(1.25)
+
+local P = game.Players.LocalPlayer
+local C = P.Character or P.CharacterAdded:Wait()
+local H = C:WaitForChild("HumanoidRootPart")
+local R = game:GetService("ReplicatedStorage")
+local RS = R.Resources
+local KE = RS.KJEffects
+local P1 = KE["1and2"]
+local P2 = KE["1and2smoke"]
+
+local P1_C = P1:Clone()
+P1_C.CFrame = H.CFrame * CFrame.new(0, 0, -3)
+
+local P2_C = P2:Clone()
+P2_C.CFrame = H.CFrame * CFrame.new(0, 0, -5)
+
+local T = C:FindFirstChild("Thrown") or Instance.new("Folder", C)
+T.Name = "Thrown"
+P1_C.Parent = T
+P2_C.Parent = T
+
+local A1 = P1_C:FindFirstChild("1and2")
+if A1 then
+    for _, E in pairs(A1:GetDescendants()) do
+        if E:IsA("ParticleEmitter") then
+            E:Emit(8)
+        end
+    end
+end
+
+wait(0.3)
+
+local P1_C = P1:Clone()
+P1_C.CFrame = H.CFrame * CFrame.new(0, 0, -3)
+
+local P2_C = P2:Clone()
+P2_C.CFrame = H.CFrame * CFrame.new(0, 0, -5)
+
+P1_C.Parent = T
+P2_C.Parent = T
+
+local A1 = P1_C:FindFirstChild("1and2")
+if A1 then
+    for _, E in pairs(A1:GetDescendants()) do
+        if E:IsA("ParticleEmitter") then
+            E:Emit(8)
+        end
+    end
+end
+
+wait(0.475)
+
+
+task.spawn(function()
+     
+local R = game:GetService("RunService")
+local P = game.Players.LocalPlayer
+local C = workspace.CurrentCamera
+
+local M = 1
+local D = 0.3
+local RD = 0.3
+
+local OC = C.CFrame
+
+local function s(d, m, rd)
+    local st = tick()
+    local c
+
+    c = R.RenderStepped:Connect(function()
+        local e = tick() - st
+        if e < d then
+            local sx = math.random(-m, m)
+            local sy = math.random(-m, m)
+            C.CFrame = C.CFrame * CFrame.Angles(math.rad(sx), math.rad(sy), 0)
+        else
+            c:Disconnect()
+            wait(rd)
+        end
+    end)
+end
+
+s(D, M, RD)
+
+    end)
+
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Workspace = game:GetService("Workspace")
+local RunService = game:GetService("RunService")
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoidRootPart = character:WaitForChild("Head")
+local resourcesFolder = ReplicatedStorage:WaitForChild("Resources")
+local kjEffectsFolder = resourcesFolder:WaitForChild("KJEffects")
+local speedlinesandstuffPart = kjEffectsFolder:WaitForChild("barrage")
+local speedlinesandstuffClone = speedlinesandstuffPart:Clone()
+speedlinesandstuffClone.Parent = Workspace
+local offset = Vector3.new(0, 0, -2)
+speedlinesandstuffClone.CFrame = humanoidRootPart.CFrame * CFrame.new(offset)
+
+local function enableParticleEmitters(parent)
+    for _, descendant in ipairs(parent:GetDescendants()) do
+        if descendant:IsA("ParticleEmitter") then
+            descendant.Enabled = true
+        end
+    end
+end
+
+RunService.RenderStepped:Connect(function()
+    if character and humanoidRootPart then
+        speedlinesandstuffClone.CFrame = humanoidRootPart.CFrame * CFrame.new(offset)
+    end
+end)
+
+spawn(function()
+    wait(0)
+    enableParticleEmitters(speedlinesandstuffClone)
+end)
+
+wait(1.3)
+speedlinesandstuffClone:Destroy()
+
+wait(0.75)
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local torso = character:WaitForChild("HumanoidRootPart")
+
+
+local function createRock(size)
+    local rock = Instance.new("Part")
+    rock.Size = size
+    rock.Shape = Enum.PartType.Block
+    rock.Anchored = false
+    rock.CanCollide = true
+    rock.Material = Enum.Material.Slate
+    rock.BrickColor = BrickColor.Gray()
+    rock.Parent = workspace
+
+    local bodyAngularVelocity = Instance.new("BodyAngularVelocity")
+    bodyAngularVelocity.MaxTorque = Vector3.new(4000, 4000, 4000)
+    bodyAngularVelocity.P = 3000
+    bodyAngularVelocity.Parent = rock
+
+    local randomDirection = Vector3.new(
+        math.random() * 2 - 1,
+        math.random() * 2 - 1,
+        math.random() * 2 - 1
+    ).unit
+    local spinSpeed = math.random(50, 150)
+    bodyAngularVelocity.AngularVelocity = randomDirection * spinSpeed
+
+    return rock, bodyAngularVelocity
+end
+
+local function rotateRocks(rotationSpeed, fallDelay, launchSpeed, verticalForce, spinSpeed, slideSpeed, slideDuration, shrinkDuration)
+    local rocks = {}
+    local numberOfRocks = 12  
+    local radius = 10
+    local rockHeight = 0.3
+
+    for i = 1, numberOfRocks do
+        local angle = (i / numberOfRocks) * math.pi * 2
+        local size = Vector3.new(0.3, 0.3, 0.3)
+        if i % 2 == 0 then
+            size = Vector3.new(0.65, 0.65, 0.65)
+        end
+        local rock, bodyAngularVelocity = createRock(size)
+        local offsetX = math.cos(angle) * radius
+        local offsetZ = math.sin(angle) * radius
+
+        rock.Position = torso.Position + Vector3.new(offsetX, rockHeight, offsetZ)
+        table.insert(rocks, { rock = rock, bodyAngularVelocity = bodyAngularVelocity })
+    end
+
+    local runService = game:GetService("RunService")
+    local startTime = tick()
+    local connection
+    connection = runService.RenderStepped:Connect(function()
+        local elapsed = tick() - startTime
+        local angleStep = (elapsed * rotationSpeed) % (math.pi * 2)
+
+        if elapsed >= 0.6 then
+            rotationSpeed = math.max(rotationSpeed * 0.95, 1)
+        end
+
+        for i, rockData in ipairs(rocks) do
+            local rock = rockData.rock
+            local angle = (i / numberOfRocks) * math.pi * 2 + angleStep
+            local offsetX = math.cos(angle) * radius
+            local offsetZ = math.sin(angle) * radius
+            rock.Position = torso.Position + Vector3.new(offsetX, rockHeight, offsetZ)
+        end
+
+        if elapsed >= fallDelay then
+            connection:Disconnect()
+            for _, rockData in ipairs(rocks) do
+                local rock = rockData.rock
+                local bodyAngularVelocity = rockData.bodyAngularVelocity
+                if bodyAngularVelocity then
+                    bodyAngularVelocity:Destroy()
+                end
+
+                local tangentialVelocity = launchSpeed * (1 + math.random(-10, 10) / 100)  
+                local bodyVelocity = Instance.new("BodyVelocity")
+                local outwardDirection = (rock.Position - torso.Position).unit
+                local randomHorizontal = Vector3.new(math.random(-1, 1), 0, math.random(-1, 1)) * 0.3  
+                bodyVelocity.Velocity = (outwardDirection + randomHorizontal).unit * tangentialVelocity + Vector3.new(0, verticalForce, 0)
+                bodyVelocity.P = 1000
+                bodyVelocity.Parent = rock
+
+                local dust = Instance.new("ParticleEmitter")
+                dust.Texture = "rbxassetid://3527866534"  
+                dust.Size = NumberSequence.new({NumberSequenceKeypoint.new(0, 2), NumberSequenceKeypoint.new(1, 0)})
+                dust.Lifetime = NumberRange.new(0.5, 1)
+                dust.Rate = 100
+                dust.Speed = NumberRange.new(5, 10)
+                dust.Parent = rock
+                dust:Emit(50)
+
+                rock.Touched:Connect(function(hit)
+                    if hit:IsA("Terrain") or (hit:IsA("BasePart") and hit.CanCollide) then
+                        bodyVelocity:Destroy()
+
+                        local glideVelocity = outwardDirection * slideSpeed
+                        local glideStartTime = tick()
+
+                        local glideConnection
+                        glideConnection = runService.RenderStepped:Connect(function()
+                            local glideElapsed = tick() - glideStartTime
+                            if glideElapsed >= slideDuration then
+                                glideConnection:Disconnect()
+                                rock.Velocity = Vector3.new(0, 0, 0)
+
+
+                                local shrinkStartTime = tick()
+                                local shrinkConnection
+                                shrinkConnection = runService.RenderStepped:Connect(function()
+                                    local shrinkElapsed = tick() - shrinkStartTime
+                                    local scale = math.max(0, rock.Size.X * (1 - (shrinkElapsed / shrinkDuration)))
+                                    rock.Size = Vector3.new(scale, scale, scale)
+                                    rock.Position = rock.Position - Vector3.new(0, (rock.Size.Y - scale) / 2, 0)
+
+                                    if scale <= 0 then
+                                        shrinkConnection:Disconnect()
+                                        rock:Destroy()
+                                    end
+                                end)
+                            else
+                                rock.Velocity = glideVelocity * (1 - (glideElapsed / slideDuration))
+                            end
+                        end)
+                    end
+                end)
+            end
+        end
+    end)
+end
+
+
+local rotationSpeed = 12
+local fallDelay = 0.65
+local launchSpeed = 25
+local verticalForce = -10
+local spinSpeed = 1200
+local slideSpeed = 30
+local slideDuration = 0.7
+local shrinkDuration = 2.5
+
+rotateRocks(rotationSpeed, fallDelay, launchSpeed, verticalForce, spinSpeed, slideSpeed, slideDuration, shrinkDuration)
+
+local a = game.ReplicatedStorage.Resources.KJEffects["RUNAROUNDWIND"].RUNAROUNDWIND:Clone()
+a.Parent = game.Players.LocalPlayer.Character["HumanoidRootPart"]
+    for _, b in ipairs(a:GetChildren()) do
+        if b:IsA("ParticleEmitter") then
+            b:Emit(5)
+            b.Rate = 145
+            b.Enabled = true
+
+task.delay(0.6, function()
+
+b.Rate = 0
+
+end)
+
+        end
+    end
+
+
+
+local r = game.ReplicatedStorage:FindFirstChild("Resources")
+if r then
+    local k = r:FindFirstChild("KJEffects")
+    if k then
+        local p = k:FindFirstChild("spinbeam")
+        if p then
+            local d = p:Clone()
+            local c = game.Players.LocalPlayer.Character
+            local hrp = c and c:FindFirstChild("HumanoidRootPart")
+            if hrp then
+                d.Parent = game.Workspace:FindFirstChild("Thrown") or Instance.new("Folder", game.Workspace)
+                d.CFrame = hrp.CFrame * CFrame.new(0, -2, 11)
+
+                local b = d:FindFirstChild("beam2")
+                if b then
+                    local beams = b:GetDescendants()
+                    for _, beam in ipairs(beams) do
+                        if beam:IsA("Beam") then
+                            beam.Enabled = true
+                            beam.Transparency = NumberSequence.new(1)
+
+                            local g = 0.8
+                            local s = (1 - g) / 10
+                            local ct = 1
+                            local rs = game:GetService("RunService")
+
+                            for i = 1, 10 do
+                                rs.Heartbeat:Wait()
+                                ct = ct - s
+                                beam.Transparency = NumberSequence.new(ct)
+                            end
+
+                            task.delay(0.28, function()
+                                local f = (1 - g) / 10
+                                for i = 1, 10 do
+                                    rs.Heartbeat:Wait()
+                                    g = g + f
+                                    beam.Transparency = NumberSequence.new(math.min(g, 1))
+                                end
+                            end)
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+  
+
+wait(0.75)
+
+for i = 1, 3 do
+    local hit1 = game.ReplicatedStorage.Resources.KJEffects["lastkick"].Attachment:Clone()
+    hit1.Parent = game.Players.LocalPlayer.Character["HumanoidRootPart"]
+    for _, child in ipairs(hit1:GetChildren()) do
+        if child:IsA("ParticleEmitter") then
+            child:Emit(5)
+        end
+    end
+end
+
+wait(0.0)
+
+task.spawn(function()
+     
+local R = game:GetService("RunService")
+local P = game.Players.LocalPlayer
+local C = workspace.CurrentCamera
+
+local M = 1
+local D = 0.3
+local RD = 0.3
+
+local OC = C.CFrame
+
+local function s(d, m, rd)
+    local st = tick()
+    local c
+
+    c = R.RenderStepped:Connect(function()
+        local e = tick() - st
+        if e < d then
+            local sx = math.random(-m, m)
+            local sy = math.random(-m, m)
+            C.CFrame = C.CFrame * CFrame.Angles(math.rad(sx), math.rad(sy), 0)
+        else
+            c:Disconnect()
+            wait(rd)
+        end
+    end)
+end
+
+s(D, M, RD)
+
+    end)
+
+wait(0.25)
+local soundeffect = Instance.new("Sound")
+soundeffect.SoundId = "rbxassetid://16945723339"
+soundeffect.Parent = game.Players.LocalPlayer.Character.Torso
+soundeffect:Play()
+soundeffect.Volume = 5
+
+local ws = game:GetService("Workspace")
+
+local function dpm()
+    local parts = {"FinalImpact", "slam", "hold", "FinalImpactHUGEignore"}
+    for _, n in pairs(parts) do
+        local p = ws:FindFirstChild(n)
+        if p then
+            p:Destroy()
+        end
+    end
+end
+
+local function main()
+    local m = ws:FindFirstChild("Weakest Dummy")
+    if m and m:IsA("Model") then
+        m:Destroy()
+    end
+    dpm()
+end
+wait(0.75)
+main()
+
+local V_123 = game.Players.LocalPlayer
+local V_456 = V_123.Character or V_123.CharacterAdded:Wait()
+local V_789 = V_456:WaitForChild("HumanoidRootPart")
+
+local function V_101()
+    local V_112 = workspace:FindFirstChild("Live")
+    if not V_112 then return end
+
+    local V_131 = V_112:FindFirstChild("Weakest Dummy")
+    if not V_131 then return end
+
+    local V_415 = V_131:Clone()
+    V_415.Parent = workspace
+    
+    local V_516 = V_789.Position + (V_789.CFrame.LookVector * 2)
+    local V_718 = CFrame.new(V_516, V_789.Position)
+    V_415:SetPrimaryPartCFrame(V_718)
+
+    local V_720 = V_415:FindFirstChildOfClass("Humanoid")
+    if V_720 then
+        local V_819 = Instance.new("Animation")
+        V_819.AnimationId = "rbxassetid://13716964686"
+        local V_920 = V_720:LoadAnimation(V_819)
+        V_920:Play()
+    end
+end
+
+V_101()
+wait(1.4)
+local soundeffect = Instance.new("Sound")
+soundeffect.SoundId = "rbxassetid://13716998561"
+soundeffect.Parent = game.Players.LocalPlayer.Character.Torso
+soundeffect:Play()
+soundeffect.Volume = 10
+wait(1)
+local soundeffect = Instance.new("Sound")
+soundeffect.SoundId = "rbxassetid://9113542363"
+soundeffect.Parent = game.Players.LocalPlayer.Character.Torso
+soundeffect:Play()
+soundeffect.Volume = 2
+local soundeffect = Instance.new("Sound")
+soundeffect.SoundId = "rbxassetid://13717046717"
+soundeffect.Parent = game.Players.LocalPlayer.Character.Torso
+soundeffect:Play()
+soundeffect.Volume = 2
+wait(0.35)
+local ws = game:GetService("Workspace")
+
+local function dpm()
+    local parts = {"FinalImpact", "slam", "hold", "FinalImpactHUGEignore"}
+    for _, n in pairs(parts) do
+        local p = ws:FindFirstChild(n)
+        if p then
+            p:Destroy()
+        end
+    end
+end
+
+local function main()
+    local m = ws:FindFirstChild("Weakest Dummy")
+    if m and m:IsA("Model") then
+        m:Destroy()
+    end
+    dpm()
+end
+
+local function main()
+    local m = ws:FindFirstChild("Weakest Dummy")
+    if m and m:IsA("Model") then
+        m:Destroy()
+    end
+    dpm()
+end
+wait(0.75)
+main()
