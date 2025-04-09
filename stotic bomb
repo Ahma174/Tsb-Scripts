@@ -1,12 +1,5 @@
 local player = game.Players.LocalPlayer
 
-    player:SetAttribute("CAMS_KJ_ScriptLoaded", true)
-
-    -- Load and execute the script (if needed, but to check only, this part can be omitted)
-    -- loadstring(game:HttpGet("https://raw.githubusercontent.com/Gokou300/Gokou300/refs/heads/main/CAMS_KJ_SCRIPT"))()
-end
-
-
 game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
 
 local p = game.Players.LocalPlayer
